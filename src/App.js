@@ -7,8 +7,18 @@ const App = () => {
 
   const handleGamePlay = (index) => {
     let updatedBoard = [...squares]
-    updatedBoard[index] = "X"
-    setSquares(updatedBoard)
+    if (counter % 2 === 0) {
+      updatedBoard[index] = "X"
+      setSquares(updatedBoard)
+    } else {
+      updatedBoard[index] = "O"
+      setSquares(updatedBoard)
+    }
+  }
+
+  const [counter, setCounter] = useState(2)
+  const plus = () => {
+    setCounter(counter+1)
   }
 
   return (
@@ -22,6 +32,7 @@ const App = () => {
           index={index}
           key={index}
           handleGamePlay={handleGamePlay}
+          plus={plus}
         />
         )
       })}
