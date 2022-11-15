@@ -6,6 +6,10 @@ h2 {
   text-align: center;
 }
 
+p {
+  text-align: center;
+}
+
 .square {
   height: 200px;
   width: 200px;
@@ -20,4 +24,11 @@ h2 {
   flex-wrap: wrap;
   width: 620px;
   margin: 0 auto;
+}
+
+.restart {
+  display: flex;
+  margin: 0 auto;
+  width: 100px;
+  height: 40px;
 }
