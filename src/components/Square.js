@@ -5,6 +5,9 @@ const Square = (props) => {
   const handleClick = () => {
     props.handleGamePlay(props.index)
     props.plus()
+    if (props.winner === true) {
+      return alert("we have a winner!")
+    }
   }
 
   return (
