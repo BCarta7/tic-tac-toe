@@ -21,9 +21,41 @@ const App = () => {
     setCounter(counter+1)
   }
 
+  const calculateWinner = (squares) => {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        return squares[a];
+      }
+    }
+    return null;
+  }
+
+  const winner = calculateWinner(squares)
+
+  let status;
+  if (winner === "X") {
+    status = "VICTORY FOR PLAYER 1"
+  } else if (winner === "O") {
+    status = "VICTORY FOR PLAYER 2"
+  }
+console.log(status)
+
   return (
     <>
       <h1>Tic Tac Toe</h1>
+      <p>Player 1 gets X. Player 2 gets O</p>
+      <h2>{status}</h2>
       <div className="gameboard">
       {squares.map((value, index) => {
         return(
@@ -33,6 +65,8 @@ const App = () => {
           key={index}
           handleGamePlay={handleGamePlay}
           plus={plus}
+          winner={winner}
+          status={status}
         />
         )
       })}
