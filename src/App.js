@@ -5,6 +5,11 @@ import './App.css'
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
 
+  const resetState = () => {
+    setSquares(Array(9).fill(null))
+    setCounter(2)
+  }
+
   const handleGamePlay = (index) => {
     let updatedBoard = [...squares]
     if (counter % 2 === 0) {
@@ -20,6 +25,7 @@ const App = () => {
   const plus = () => {
     setCounter(counter+1)
   }
+  console.log(counter)
 
   const calculateWinner = (squares) => {
     const lines = [
@@ -56,7 +62,7 @@ const App = () => {
     <>
       <h1>Tic Tac Toe</h1>
       <p>Player 1 gets X. Player 2 gets O</p>
-      <button className="restart" onClick={() => window.location.reload(false)}>Start new game</button>
+      <button className="restart" onClick={resetState}>Start new game</button>
       <h2>{status}</h2>
       <div className="gameboard">
       {squares.map((value, index) => {
