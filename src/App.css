@@ -1,3 +1,7 @@
+* {
+  background-color: whitesmoke;
+}
+
 h1 {
   text-align: center;
 }
@@ -10,6 +14,14 @@ p {
   text-align: center;
 }
 
+.p1 {
+  color: red;
+}
+
+.p2 {
+  color: blue;
+}
+
 .square {
   height: 200px;
   width: 200px;
@@ -17,6 +29,7 @@ p {
   font-size: 150px;
   text-align: center;
   color: black;
+  background-color: rgb(187, 187, 187);
 }
 
 .gameboard {
@@ -24,6 +37,7 @@ p {
   flex-wrap: wrap;
   width: 620px;
   margin: 0 auto;
+  margin-bottom: 5vh;
 }
 
 .restart {
@@ -31,4 +45,5 @@ p {
   margin: 0 auto;
   width: 100px;
   height: 40px;
+  background-color: rgb(187, 187, 187);
 }

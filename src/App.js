@@ -10,13 +10,14 @@ const App = () => {
     setCounter(2)
   }
 
+
   const handleGamePlay = (index) => {
     let updatedBoard = [...squares]
     if (counter % 2 === 0) {
-      updatedBoard[index] = "X"
+      updatedBoard[index] = "❎"
       setSquares(updatedBoard)
     } else {
-      updatedBoard[index] = "O"
+      updatedBoard[index] = "🅾️"
       setSquares(updatedBoard)
     }
   }
@@ -50,9 +51,9 @@ const App = () => {
   const winner = calculateWinner(squares)
 
   let status;
-  if (winner === "X") {
+  if (winner === "❎") {
     status = "VICTORY FOR PLAYER 1"
-  } else if (winner === "O") {
+  } else if (winner === "🅾️") {
     status = "VICTORY FOR PLAYER 2"
   } else if (counter === 11) {
     status = "STALEMATE"
