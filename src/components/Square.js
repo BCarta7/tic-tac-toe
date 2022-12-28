@@ -8,7 +8,7 @@ const Square = (props) => {
   }
 
   return (
-    <button className="square" onClick={handleClick} disabled={props.value === 'X' || props.value === 'O' || props.winner === "X" || props.winner === "O"}>{props.value}</button>
+    <button className="square" onClick={handleClick} disabled={props.value === '❎' || props.value === '🅾️' || props.winner === "❎" || props.winner === "🅾️"}>{props.value}</button>
   )
 }
 export default Square
